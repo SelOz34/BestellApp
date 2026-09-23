@@ -14,13 +14,16 @@
     <link rel="stylesheet" href="style.css" />
 
 </head>
-<body>
+<body id="top">
     <header class="site-header">
       <div class="site-header__inner">
         <a class="logo" href="#top" aria-label="Bestell App, back to top">
           <img class="icon logo__icon" src="assets/icons/takeout-white.svg" alt="" aria-hidden="true" />
           <span class="logo__text">Bestell<br />App</span>
         </a>
+        <button class="menu-button" type="button" aria-label="Open menu">
+          <img class="icon" src="assets/icons/menu.svg" alt="" aria-hidden="true" />
+        </button>
       </div>
     </header>
 
@@ -44,6 +47,53 @@
           height="200"
         />
       </section>
+    
+
+    <section class="restaurant" aria-labelledby="restaurantName">
+        <div class="restaurant__title">
+          <h1 id="restaurantName">BurgerHouse</h1>
+          <p class="rating" aria-label="Rated 4.1 out of 5 stars by 317 people">
+            <span class="rating__stars" aria-hidden="true">
+              <img class="icon" src="assets/icons/star.svg" alt="" />
+              <img class="icon" src="assets/icons/star.svg" alt="" />
+              <img class="icon" src="assets/icons/star.svg" alt="" />
+              <img class="icon" src="assets/icons/star.svg" alt="" />
+              <img class="icon rating__star--empty" src="assets/icons/star.svg" alt="" />
+            </span>
+            <span class="rating__score" aria-hidden="true">4,1</span>
+            <span class="rating__count" aria-hidden="true">(317)</span>
+          </p>
+        </div>
+        <p class="restaurant__description">
+          The best of Burgers, Pizza, and Greens, all in one great place.
+        </p>
+        <ul class="restaurant__facts">
+          <li>
+            <img class="icon" src="assets/icons/takeout-ink.svg" alt="" aria-hidden="true" />
+            Delivery 4,99€
+          </li>
+          <li>
+            <img class="icon" src="assets/icons/clock.svg" alt="" aria-hidden="true" />
+            30–40 min
+          </li>
+        </ul>
+      </section>
+
+      <div class="shop">
+        <div class="menu-column">
+          <nav class="category-slider" aria-label="Menu categories">
+            <ul id="categorySlider"></ul>
+          </nav>
+          <div id="menu"></div>
+        </div>
+
+        <aside
+          class="basket-panel"
+          id="basketDesktop"
+          aria-label="Your basket"
+          data-basket-host
+        ></aside>
+      </div>
     </main>
 
     <footer class="site-footer">
