@@ -1,0 +1,54 @@
+.mobile-bar {
+  display: none;
+}
+
+.basket-dialog {
+  width: min(420px, calc(100% - 32px));
+  height: min(707px, calc(100vh - 32px));
+  height: min(707px, calc(100dvh - 32px));
+  max-width: none;
+  max-height: none;
+  padding: 0;
+  border: 0;
+  border-radius: 24px;
+  background: var(--ink);
+  color: var(--peach);
+}
+
+.basket-dialog::backdrop {
+  background: rgba(54, 53, 52, 0.65);
+}
+
+.basket-dialog[open] {
+  display: block;
+}
+
+.basket-dialog__body {
+  height: 100%;
+  padding: 32px 22px 24px;
+}
+
+.basket-dialog__close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--peach);
+}
+
+.basket-dialog__close:hover {
+  background: rgba(253, 234, 220, 0.15);
+}
+
+.basket-dialog__close .icon {
+  width: 20px;
+  height: 20px;
+}

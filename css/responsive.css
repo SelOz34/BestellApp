@@ -1,0 +1,268 @@
+@media (min-width: 1024px) {
+  :root {
+    --column-offset: max(0px, calc((100% - (var(--page-width) - var(--basket-width))) / 2));
+  }
+}
+
+
+@media (max-width: 1023px) {
+  body {
+    padding-bottom: 78px;
+  }
+
+  .category-slider {
+    display: none;
+  }
+
+  .shop {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .basket-panel {
+    display: none;
+  }
+
+  .category__dishes {
+    max-width: none;
+    padding-right: var(--gutter);
+  }
+
+  .mobile-bar {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+    min-height: 78px;
+    padding: 0 16px env(safe-area-inset-bottom);
+    background: var(--ink);
+    color: var(--peach);
+  }
+
+  .mobile-bar__item {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 0;
+    border-radius: 12px;
+    background: transparent;
+    color: inherit;
+  }
+
+  .mobile-bar__item .icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .mobile-bar__basket {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 48px;
+    height: 48px;
+    padding: 0 16px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--orange);
+    color: var(--white);
+    font-size: 19px;
+    font-weight: 700;
+  }
+
+  .mobile-bar__cart {
+    position: relative;
+    display: grid;
+  }
+
+  .mobile-bar__cart .icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .mobile-bar__count[hidden] {
+    display: none;
+  }
+
+  .mobile-bar__count {
+    position: absolute;
+    top: -12px;
+    right: -14px;
+    display: grid;
+    place-items: center;
+    min-width: 21px;
+    height: 21px;
+    padding: 0 4px;
+    border-radius: 999px;
+
+    background: var(--peach);
+    color: var(--orange-text);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+
+
+  }
+}
+
+@media (max-width: 767px) {
+  .hero__image {
+    height: 340px;
+  }
+
+  .hero {
+    margin-bottom: 110px;
+  }
+
+  .restaurant h1 {
+    font-size: 40px;
+  }
+
+  .category__header {
+    padding-left: calc(var(--gutter) + 8px);
+
+  }
+
+  .category__icon {
+    height: 76px;
+  }
+
+  .category__title {
+    font-size: 32px;
+  }
+}
+
+
+@media (max-width: 599px) {
+  .site-header__inner {
+    height: 79px;
+    padding: 0 16px;
+  }
+
+  .menu-button {
+    width: 48px;
+    height: 48px;
+  }
+
+  .menu-button .icon {
+    width: 32px;
+    height: 25px;
+  }
+
+  .hero {
+    margin: 16px 16px 76px;
+  }
+
+  .hero__image {
+    height: auto;
+    aspect-ratio: 1 / 1;
+    max-height: 420px;
+    border-radius: 16px;
+  }
+
+  .hero__logo {
+    bottom: -60px;
+    width: 120px;
+    height: 120px;
+    border-width: 6px;
+  }
+
+  .restaurant {
+    padding: 0 16px 28px;
+  }
+
+  .restaurant__title {
+    flex-direction: column-reverse;
+    gap: 12px;
+  }
+
+  .restaurant__description {
+    font-size: 22px;
+  }
+
+  .category-slider {
+    padding-inline: 16px;
+  }
+
+  .category {
+    scroll-margin-top: calc(var(--slider-height) + 44px);
+  }
+
+  .category__header {
+    flex-direction: column;
+    gap: 0;
+    height: auto;
+    margin: 64px 0 20px;
+    padding: 0 16px 12px;
+  }
+
+  .category__icon {
+    height: 60px;
+    margin-block: -32px 4px;
+  }
+
+  .menu-column {
+    padding-bottom: 48px;
+
+
+  }
+
+  .category__dishes {
+    padding: 0 20px;
+  }
+
+
+  .dish {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "image image"
+      "text text"
+      "price button";
+    gap: 12px 8px;
+  }
+
+  .dish__image {
+    height: 140px;
+    min-height: 0;
+  }
+
+  .dish__price {
+    justify-self: start;
+    align-self: center;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}
+
+
+@media (max-width: 379px) {
+  .restaurant h1 {
+    font-size: 34px;
+  }
+
+  .category__title {
+    font-size: 28px;
+  }
+
+  .dish__name {
+    font-size: 22px;
+  }
+
+  .buy-button {
+    font-size: 24px;
+  }
+
+  .mobile-bar__basket {
+    padding: 0 12px;
+    font-size: 18px;
+  }
+}

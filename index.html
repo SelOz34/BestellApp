@@ -1,26 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BurgerHouse - Bestell App</title>
-    <meta name="description" content="Order burger, pizza and salads from BurgerHouse. Test project."/>
-    <meta name="theme-color" content="#e76c1f">
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BurgerHouse – Bestell App</title>
+    <meta
+      name="description"
+      content="Order burgers, pizza and salads from BurgerHouse. Test project."
+    />
+    <meta name="theme-color" content="#e76c1f" />
     <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="assets/icons/favicon.ico" sizes="48x48" />
     <link rel="stylesheet" href="css/fonts.css" />
     <link rel="stylesheet" href="css/standard.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/shopLayout.css" />
+    <link rel="stylesheet" href="css/basket.css" />
+    <link rel="stylesheet" href="css/mobileAndBasket.css" />
+    <link rel="stylesheet" href="css/orderConfirmation.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
 
-</head>
-<body id="top">
+  <body id="top">
+
+    <a class="skip-link" href="#menu">Skip to the menu</a>
+
     <header class="site-header">
       <div class="site-header__inner">
         <a class="logo" href="#top" aria-label="Bestell App, back to top">
           <img class="icon logo__icon" src="assets/icons/takeout-white.svg" alt="" aria-hidden="true" />
           <span class="logo__text">Bestell<br />App</span>
         </a>
+
         <button class="menu-button" type="button" aria-label="Open menu">
           <img class="icon" src="assets/icons/menu.svg" alt="" aria-hidden="true" />
         </button>
@@ -47,9 +58,8 @@
           height="200"
         />
       </section>
-    
 
-    <section class="restaurant" aria-labelledby="restaurantName">
+      <section class="restaurant" aria-labelledby="restaurantName">
         <div class="restaurant__title">
           <h1 id="restaurantName">BurgerHouse</h1>
           <p class="rating" aria-label="Rated 4.1 out of 5 stars by 317 people">
@@ -101,11 +111,82 @@
         <img class="icon" src="assets/icons/copyright.svg" alt="" aria-hidden="true" />
         2026 BurgerHouse
       </p>
-    
+
       <a href="#top">Imprint</a>
       <a href="#top">Cookie Preferences</a>
     </footer>
 
-    <div id="menu"></div>
-</body>
+    <nav class="mobile-bar" aria-label="Main navigation">
+      <a class="mobile-bar__item" href="#top" aria-label="Home">
+        <img class="icon" src="assets/icons/home.svg" alt="" aria-hidden="true" />
+      </a>
+      <button class="mobile-bar__item" type="button" aria-label="Profile">
+        <img class="icon" src="assets/icons/profile.svg" alt="" aria-hidden="true" />
+      </button>
+      <button class="mobile-bar__item" type="button" aria-label="Orders">
+        <img class="icon" src="assets/icons/orders.svg" alt="" aria-hidden="true" />
+      </button>
+      <button
+        class="mobile-bar__basket"
+        id="mobileBasketButton"
+        type="button"
+        onclick="openBasketDialog()"
+      >
+        <span class="mobile-bar__cart">
+          <img class="icon" src="assets/icons/cart-white.svg" alt="" aria-hidden="true" />
+          <span class="mobile-bar__count" id="mobileBasketCount" hidden>0</span>
+        </span>
+        <span id="mobileBasketTotal"></span>
+      </button>
+    </nav>
+
+    <dialog class="basket-dialog" id="basketDialog" aria-label="Your basket">
+      <button
+        class="basket-dialog__close"
+        type="button"
+        onclick="closeBasketDialog()"
+        aria-label="Close basket"
+      >
+        <img class="icon" src="assets/icons/close-peach.svg" alt="" aria-hidden="true" />
+      </button>
+      <div class="basket-dialog__body" id="basketDialogBody" data-basket-host></div>
+    </dialog>
+
+    <div
+      class="confirmation"
+      id="confirmation"
+      role="alertdialog"
+      aria-labelledby="confirmationTitle"
+      aria-describedby="confirmationText"
+    >
+      <div class="confirmation__card" tabindex="-1">
+        <button
+          class="confirmation__close"
+          type="button"
+          onclick="hideConfirmation()"
+          aria-label="Close message"
+        >
+          <img class="icon" src="assets/icons/close-ink.svg" alt="" aria-hidden="true" />
+        </button>
+        <img
+          class="confirmation__image"
+          src="assets/img/delivery-truck.webp"
+          alt=""
+          width="160"
+          height="104"
+        />
+        <h2 id="confirmationTitle">Order confirmed!</h2>
+        <p id="confirmationText">Your food is on the way!</p>
+        <p class="confirmation__note">This was a test order. Nothing was ordered or paid.</p>
+        <button class="confirmation__home" type="button" onclick="backToHomePage()">
+          Home page
+        </button>
+      </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/basket.js"></script>
+    <script src="js/templates.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>

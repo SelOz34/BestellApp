@@ -1,0 +1,99 @@
+.confirmation {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: rgba(54, 53, 52, 0.6);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.4s ease,
+    visibility 0s linear 0.4s;
+}
+
+.confirmation.is-open {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.confirmation__card {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  width: min(539px, 100%);
+  padding: 44px 32px 36px;
+  border-radius: 30px;
+  background: var(--peach-strong);
+  text-align: center;
+}
+
+.confirmation__card:focus {
+  outline: none;
+}
+
+.confirmation__image {
+  width: 160px;
+  height: auto;
+  margin-bottom: 8px;
+}
+
+.confirmation h2 {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.confirmation #confirmationText {
+  font-size: 29px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.confirmation__note {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.confirmation__home {
+  margin-top: 16px;
+  padding: 12px 28px;
+  border: 0;
+  border-radius: 60px;
+  background: var(--orange);
+  color: #fbfbfb;
+  font-size: 24px;
+  font-weight: 700;
+  transition: filter 0.2s;
+}
+
+.confirmation__home:hover {
+  filter: brightness(0.92);
+}
+
+.confirmation__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink);
+}
+
+.confirmation__close:hover {
+  background: rgba(54, 53, 52, 0.12);
+}
+
+.confirmation__close .icon {
+  width: 20px;
+  height: 20px;
+}
